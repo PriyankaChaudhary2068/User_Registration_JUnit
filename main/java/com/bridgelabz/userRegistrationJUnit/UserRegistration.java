@@ -4,9 +4,9 @@ import java.util.regex.Pattern;
 
 
 public class UserRegistration {
-
 	
-        private static final String NAME_REGEX = "[A-Z][a-z]{3,}";
+
+	    private static final String NAME_REGEX = "[A-Z][a-z]{3,}";
 
 	    public boolean validateFirstName(String firstName) {
 	        return Pattern.matches(NAME_REGEX, firstName);
@@ -27,7 +27,11 @@ public class UserRegistration {
 	    public boolean validatePassword(String password) {
 	        return Pattern.matches("(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$ %^&*-]).{8,}", password);
 	    }
+
+	    public boolean validateMultipleEmailId(String multipleEmailId) {
+	        return Pattern.matches("[a-z \\d -.]+[@][a-z \\d]+[.][a-z]{3,}", multipleEmailId);
+	        
+	    }
 	}
-	
 
 
